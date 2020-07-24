@@ -3,7 +3,7 @@ console.time('script')
 
 function slow(index = 0) {
     if(index === 1_000_000) return console.timeEnd('slow')
-    return setImmediate(slow, index+1)
+    return setTimeout(() => slow(index+1), 0)
 }
 
 function timeoutCallback() {
